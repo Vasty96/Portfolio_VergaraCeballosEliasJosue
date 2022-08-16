@@ -12,14 +12,9 @@ div{
     margin-bottom: 1rem;
 }
 
-@media (min-width: 576px){
-    #perfilPic{
-        position: absolute;
-        width: 15%;
+#perfilPic{
         border-radius: 100%;
         box-shadow: 3px 3px 3px 3px grey;
-    }
-
 }
 
 @media (max-width: 575px){
