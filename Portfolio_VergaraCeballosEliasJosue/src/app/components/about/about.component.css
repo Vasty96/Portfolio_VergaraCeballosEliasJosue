@@ -1,0 +1,36 @@
+.row{
+    padding: 15px;
+}
+
+div{
+    background-color: rgb(225, 217, 255);
+    text-align: justify;
+}
+
+#nombre{
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 576px){
+    #perfilPic{
+        position: absolute;
+        width: 15%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px 3px grey;
+    }
+
+}
+
+@media (max-width: 575px){
+    #perfilPic{
+        width: 40%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px 3px grey;
+        top: 10px;
+    }
+
+    #acercaDe{
+        text-align: center;
+    }
+}

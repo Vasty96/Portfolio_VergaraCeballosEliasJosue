@@ -1,0 +1,9 @@
+div{
+    background-color: rgb(200, 185, 255);
+    overflow: hidden;
+}
+
+app-redes-sociales{
+    margin-top: 10px;
+    float: right;
+}
