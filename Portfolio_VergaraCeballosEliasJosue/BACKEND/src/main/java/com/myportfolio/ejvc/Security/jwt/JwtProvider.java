@@ -22,9 +22,9 @@ public class JwtProvider {
     
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
     
-    @Value("${swt.secret}")
+    @Value("${jwt.secret}")
     private String secret;
-    @Value("${swt.expiration}")
+    @Value("${jwt.expiration}")
     private int expiration;
     
     public String generateToken(Authentication authentication){

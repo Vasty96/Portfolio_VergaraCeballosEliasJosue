@@ -10,7 +10,7 @@ public class LoginUsuario {
     @NotBlank
     private String nombreUsuario;
     @NotBlank
-    private String Password;
+    private String password;
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -21,11 +21,11 @@ public class LoginUsuario {
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String Password) {
-        this.Password = Password;
+        this.password = Password;
     }
     
     
