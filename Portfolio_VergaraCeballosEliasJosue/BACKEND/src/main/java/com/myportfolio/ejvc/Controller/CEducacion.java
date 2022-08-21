@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/Educacion")
+@RequestMapping("/educacion")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CEducacion {
     @Autowired
@@ -33,7 +33,6 @@ public class CEducacion {
     @GetMapping("/lista")
     public ResponseEntity<List<Educacion>> list(){
         List<Educacion> list = sEducacion.list();
-        
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
@@ -82,7 +81,7 @@ public class CEducacion {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
         if(!sEducacion.existsById(id))
-            return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
         
         sEducacion.delete(id);
         

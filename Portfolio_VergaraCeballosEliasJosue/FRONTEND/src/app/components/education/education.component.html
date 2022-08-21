@@ -1,19 +1,29 @@
 <div class="row">
     <h1>Educacion</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-secondary" routerLink="/nuevaedu" *ngIf="isLogged">
+            Agregar Educacion
+        </button>
+    </div>
+    <div class="col-lg-1"></div>
     <div class="col-lg-11">
-        <ul>
-            <li>
-                <h1> Estudio 1</h1> - <h3>(years)</h3>
-            </li>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti omnis illo totam ratione, odit repellendus eos voluptatum distinctio animi. Quam nam minima repudiandae animi voluptatum laudantium non deserunt neque iste!</p>
-            <li>
-                <h1> Estudio 2</h1> - <h3>(years)</h3>
-            </li>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti omnis illo totam ratione, odit repellendus eos voluptatum distinctio animi. Quam nam minima repudiandae animi voluptatum laudantium non deserunt neque iste!</p>            
-            <li>
-                <h1> Estudio 3</h1> - <h3>(years)</h3>
-            </li>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti omnis illo totam ratione, odit repellendus eos voluptatum distinctio animi. Quam nam minima repudiandae animi voluptatum laudantium non deserunt neque iste!</p>
-        </ul>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Educacion of educacion">
+                    <td>
+                        <h2>{{Educacion.nombreEdu}}</h2>
+                    </td>
+                    <td>{{Educacion.descripcionEdu}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-info" routerLink="/editedu/{{Educacion.id}}">
+                            <i class="bi bi-pencil-square"></i>EDIT</button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                            <i class="bi bi-trash"></i>ELIMINAR</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
