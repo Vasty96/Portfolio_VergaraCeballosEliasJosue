@@ -1,5 +1,5 @@
 .row{
-    background: rgb(227, 226, 253);
+    background: #241c44;
     padding: 20px;
 }
 
@@ -13,5 +13,5 @@
 }
 
 .img-proyecto{
-    box-shadow: 8px 8px 10px rgb(76, 50, 78);
+    box-shadow: 2px 2px 15px white;
 }

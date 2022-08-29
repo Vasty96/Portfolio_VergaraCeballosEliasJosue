@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    background: black;
+}
+
 body{
     margin: 0%;
+}
+
+.row{
+    border:0px;
+    margin-right:0;
+    margin-left:0;
+    max-width:100%;
+    --bs-gutter-x: 0rem;
+
+}
+
+h1,h2,h3,
+p,td{
+    color:#dadada;
 }

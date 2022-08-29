@@ -1,0 +1,21 @@
+body{
+    margin: 0%;
+    background: black;
+}
+
+.container,
+.row{
+    background: black;
+}
+
+.form-control,
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active{
+  background-color: black!important;
+  color: white;
+}
+
+label{
+    color: white;
+}

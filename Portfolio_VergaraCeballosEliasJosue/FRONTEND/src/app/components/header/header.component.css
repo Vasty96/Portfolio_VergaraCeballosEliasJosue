@@ -1,8 +1,12 @@
 div{
-    background-color: rgb(200, 185, 255);
+    background-color: black;
     overflow: hidden;
 }
 
 app-nav{
     padding: 5px;
+}
+
+.row{
+    --bs-gutter-x: 0;
 }
