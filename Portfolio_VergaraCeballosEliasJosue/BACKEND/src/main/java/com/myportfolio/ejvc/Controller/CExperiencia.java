@@ -26,7 +26,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("explab")
-@CrossOrigin(origins = "https://ejvcfrontend.web.app")
+/*@CrossOrigin(origins = "https://ejvcfrontend.web.app")*/
+@CrossOrigin(origins = "http://localhost:4200")
 public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
@@ -68,7 +69,7 @@ public class CExperiencia {
         
         if(sExperiencia.existsByNombreE(dtoExp.getNombreE()) &&
                 sExperiencia.getByNombreE(dtoExp.getNombreE()).get().getId() != id)
-            return new ResponseEntity(new Mensaje("Esa esperiencia ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);
         
         if(StringUtils.isBlank(dtoExp.getNombreE()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
