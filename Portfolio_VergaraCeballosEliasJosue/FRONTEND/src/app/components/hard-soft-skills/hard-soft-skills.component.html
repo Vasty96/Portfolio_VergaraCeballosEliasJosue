@@ -1,7 +1,7 @@
 <div class="row g-0">
     <h1>Hard & Soft Skills</h1>
     <div class="col-lg-2">
-        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
+        <button type="button" routerLink="/newskill" class="btn btn-secondary" *ngIf="isLogged">Nueva Skill</button>
     </div>
     <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
         <circle-progress

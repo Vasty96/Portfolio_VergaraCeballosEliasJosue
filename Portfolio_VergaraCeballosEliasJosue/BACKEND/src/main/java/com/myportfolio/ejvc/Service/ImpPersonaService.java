@@ -1,9 +1,10 @@
 package com.myportfolio.ejvc.Service;
 
 import com.myportfolio.ejvc.Entity.Persona;
-import com.myportfolio.ejvc.Interface.IPersonaService;
 import com.myportfolio.ejvc.Repository.IPersonaRepository;
 import java.util.List;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,30 +13,37 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class ImpPersonaService implements IPersonaService{
+@Transactional
+public class ImpPersonaService{
     
-    @Autowired IPersonaRepository iPersonaRespository;
+    @Autowired 
+    IPersonaRepository iPersonaRespository;    
     
-    @Override
-    public List<Persona> getPersona() {
-        List<Persona> personas = iPersonaRespository.findAll();
-        return personas;
+    public List<Persona> list(){
+        return iPersonaRespository.findAll();
     }
-
-    @Override
-    public void savePersona(Persona persona) {
+    
+    public Optional<Persona> getOne(int id){
+        return iPersonaRespository.findById(id);
+    }
+    
+    public Optional<Persona> getByNombre(String nombre){
+        return iPersonaRespository.findByNombre(nombre);
+    }
+    
+    public void save(Persona persona){
         iPersonaRespository.save(persona);
     }
-
-    @Override
-    public void deletePersona(Long id) {
+    
+    public void delete(int id){
         iPersonaRespository.deleteById(id);
     }
-
-    @Override
-    public Persona findPersona(Long id) {
-        Persona persona = iPersonaRespository.findById(id).orElse(null);
-        return persona;
+    
+    public boolean existsById(int id){
+        return iPersonaRespository.existsById(id);
     }
     
+    public boolean existsByNombre(String nombre){
+        return iPersonaRespository.existsByNombre(nombre);
+    }
 }
