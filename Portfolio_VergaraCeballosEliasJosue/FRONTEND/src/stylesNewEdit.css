@@ -3,9 +3,15 @@ body{
     background: black;
 }
 
-.container,
+.container{
+    background: black;
+    max-width: none;
+}
+
 .row{
     background: black;
+    max-width: 80%;
+    margin: 5%;
 }
 
 .form-control,

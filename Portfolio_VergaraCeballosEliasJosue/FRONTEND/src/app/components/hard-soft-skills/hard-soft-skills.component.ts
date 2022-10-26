@@ -17,7 +17,7 @@ export class HardSoftSkillsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cargarExperiencia();
+    this.cargarSkill();
 
     if(this.tokenService.getToken()){
       this.isLogged = true;
@@ -26,14 +26,14 @@ export class HardSoftSkillsComponent implements OnInit {
     }
   }
 
-  cargarExperiencia(): void{
+  cargarSkill(): void{
     this.skills.lista().subscribe(data => this.skill = data);
   }
 
   delete(id?: number){
     if(id != undefined){
       this.skills.delete(id).subscribe(data=>{
-        this.cargarExperiencia();
+        this.cargarSkill();
       }, err =>{
         alert("No se pudo borrar la skill");
       })

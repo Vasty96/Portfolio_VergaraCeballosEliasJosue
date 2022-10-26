@@ -17,7 +17,7 @@ export class EducationComponent implements OnInit {
 
   ngOnInit(): void {
 
-  this.cargarEducacion();
+    this.cargarEducacion();
 
     if(this.tokenService.getToken()){
       this.isLogged = true;
