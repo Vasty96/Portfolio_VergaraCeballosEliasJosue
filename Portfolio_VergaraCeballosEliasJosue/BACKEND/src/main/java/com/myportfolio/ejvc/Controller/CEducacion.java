@@ -43,10 +43,7 @@ public class CEducacion {
     public ResponseEntity<?> create(@RequestBody dtoEducacion dtoEdu){
         if(StringUtils.isBlank(dtoEdu.getNombreEdu()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-            
-        if(sEducacion.existsByNombreEdu(dtoEdu.getNombreEdu()))
-            return new ResponseEntity(new Mensaje("Esa educacion esa existe"), HttpStatus.BAD_REQUEST);
-        
+
         Educacion educacion = new Educacion(dtoEdu.getNombreEdu(), dtoEdu.getDescripcionEdu());
         sEducacion.save(educacion);
         
@@ -66,10 +63,6 @@ public class CEducacion {
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoEdu){
         if(!sEducacion.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
-        
-        if(sEducacion.existsByNombreEdu(dtoEdu.getNombreEdu()) &&
-                sEducacion.getByNombreEdu(dtoEdu.getNombreEdu()).get().getId() != id)
-            return new ResponseEntity(new Mensaje("Esa esperiencia ya existe"), HttpStatus.BAD_REQUEST);
         
         if(StringUtils.isBlank(dtoEdu.getNombreEdu()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
